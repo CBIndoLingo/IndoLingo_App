@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "985354125",
+    "firebase_url": "https://indolingo-8d5ee.firebaseio.com",
+    "project_id": "indolingo-8d5ee",
+    "storage_bucket": "indolingo-8d5ee.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:985354125:android:c6f0010e7741121f75b7c4",
+        "android_client_info": {
+          "package_name": "com.example.myapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "985354125-fquo0ljck57nj4mjlhsh6r29adpisspr.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.myapplication",
+            "certificate_hash": "ba093a8749dfed8346edc5c8a7d86e7d57d0b3c1"
+          }
+        },
+        {
+          "client_id": "985354125-k95i48tvah30rq9i0h6aqt3o1ku63orh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCp4BCobVXG3-DzoYVhnAmh6U04BUMl7UY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "985354125-k95i48tvah30rq9i0h6aqt3o1ku63orh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
