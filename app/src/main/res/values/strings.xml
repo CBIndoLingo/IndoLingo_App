@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">My Application</string>
+    <string name="app_name">Indolingo</string>
+    <string name="sign_up">Sign Up</string>
 </resources>

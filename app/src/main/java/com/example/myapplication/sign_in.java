@@ -25,7 +25,7 @@ public class sign_in extends AppCompatActivity {
     private FirebaseAuth firebaseAuth;
     Button login;
     ImageView back_welcome;
-    TextView register,forgotpass;
+    TextView forgotpass;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
