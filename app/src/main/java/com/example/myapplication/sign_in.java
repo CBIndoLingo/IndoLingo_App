@@ -1,6 +1,7 @@
 package com.example.myapplication;
 
 import android.app.Dialog;
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -24,6 +25,7 @@ public class sign_in extends AppCompatActivity {
     EditText password, email;
     private FirebaseAuth firebaseAuth;
     Button login;
+    ProgressDialog progressDialog;
     ImageView back_welcome;
     TextView forgotpass;
 
@@ -60,6 +62,7 @@ public class sign_in extends AppCompatActivity {
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                showProgressBar(true);
 
                 String Email = email.getText().toString();
                 String Password = password.getText().toString();
@@ -76,6 +79,7 @@ public class sign_in extends AppCompatActivity {
                         .addOnCompleteListener(sign_in.this, new OnCompleteListener<AuthResult>() {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
+                                progressDialog.dismiss();
                                 if (task.isSuccessful()) {
                                     startActivity(new Intent(getApplicationContext(),MainActivity.class));
                                     finish();
@@ -90,6 +94,17 @@ public class sign_in extends AppCompatActivity {
             }
         });
 
+    }
+
+    private void showProgressBar(boolean b) {
+        progressDialog= new ProgressDialog(sign_in.this);
+        if(b==true){
+            progressDialog.show();
+            progressDialog.setContentView(R.layout.progress_dialog);
+        }
+        if(b==false){
+            progressDialog.dismiss();
+        }
     }
 
     private void opendailog() {
@@ -116,8 +131,16 @@ public class sign_in extends AppCompatActivity {
                     Toast.makeText(sign_in.this,"Enter an email",Toast.LENGTH_SHORT).show();
                 }
                 else {
-                    firebaseAuth.sendPasswordResetEmail(s);
-                    Toast.makeText(sign_in.this,"Email Send to Your Email adress",Toast.LENGTH_SHORT).show();
+                    firebaseAuth.sendPasswordResetEmail(s).addOnCompleteListener(new OnCompleteListener<Void>() {
+                        @Override
+                        public void onComplete(@NonNull Task<Void> task) {
+                            if(task.isSuccessful()){
+                                Toast.makeText(sign_in.this,"Password reset email has been sent to your email.",Toast.LENGTH_LONG).show();
+                            }else{
+                                Toast.makeText(sign_in.this,task.getException().getMessage(),Toast.LENGTH_LONG).show();
+                            }
+                        }
+                    });
                     dialog.dismiss();
                 }
             }

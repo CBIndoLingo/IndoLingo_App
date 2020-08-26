@@ -10,7 +10,7 @@
 
             <corners android:radius="50dp" />
 
-            <solid android:color="@color/green_button" />
+            <solid android:color="@color/blue_background" />
 
             <padding android:left="15dp"
                 android:right="15dp"

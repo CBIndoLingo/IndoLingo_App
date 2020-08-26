@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/blue_background"
-    android:padding="16dp">
+    android:padding="15dp">
 
     <LinearLayout
         android:id="@+id/toolbar"
@@ -13,8 +13,8 @@
 
         <ImageView
             android:id="@+id/back_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             android:src="@drawable/ic_back_button"
             android:layout_gravity="center"/>
 
@@ -22,9 +22,9 @@
             android:id="@+id/layout_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Sign In"
+            android:text="Sign IN"
             android:textSize="28sp"
-            android:layout_marginLeft="16dp"
+            android:layout_marginLeft="35dp"
             android:gravity="center"
             android:textColor="@color/white_text"/>
 
@@ -53,7 +53,7 @@
         android:textSize="24sp"
         android:textColorHint="@color/grey_button"
         android:padding="10dp"
-        android:background="@color/white_text"/>
+        android:background="@drawable/sign_in_edit_text"/>
 
     <Button
         android:id="@+id/sign_in_button"
@@ -84,7 +84,6 @@
         android:layout_below="@+id/forgot_password"
         android:layout_marginTop="20dp"
         android:layout_centerHorizontal="true"
-        android:layout_height="wrap_content"
-        android:layout_weight="1" />
+        android:layout_height="wrap_content"/>
 
 </RelativeLayout>

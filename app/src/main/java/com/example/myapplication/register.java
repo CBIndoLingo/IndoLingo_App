@@ -1,5 +1,6 @@
 package com.example.myapplication;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -22,6 +23,7 @@ public class register extends AppCompatActivity {
     EditText password, email,cnfpassword;
     private FirebaseAuth firebaseAuth;
     Button signup;
+    ProgressDialog progressDialog;
     ImageView back_welcome;
 
     @Override
@@ -69,15 +71,17 @@ public class register extends AppCompatActivity {
                 }
 
                 if (password1.equals(password2)) {
+                    showProgressBar(true);
                     firebaseAuth.createUserWithEmailAndPassword(Email, password1)
                             .addOnCompleteListener(register.this, new OnCompleteListener<AuthResult>() {
                                 @Override
                                 public void onComplete(@NonNull Task<AuthResult> task) {
+                                    progressDialog.dismiss();
                                     if (task.isSuccessful()) {
                                         startActivity(new Intent(getApplicationContext(), MainActivity.class));
                                         finish();
                                     } else {
-                                        Toast.makeText(register.this, "Registeration failed", Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(register.this, task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                                     }
                                 }
 
@@ -85,9 +89,20 @@ public class register extends AppCompatActivity {
 
                 }
                 else {
-                    Toast.makeText(register.this, "Password not Equals to confirm password", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(register.this, "Password does not match", Toast.LENGTH_SHORT).show();
                 }
             }
         });
+    }
+
+    private void showProgressBar(boolean b) {
+        progressDialog= new ProgressDialog(register.this);
+        if(b==true){
+            progressDialog.show();
+            progressDialog.setContentView(R.layout.progress_dialog);
+        }
+        if(b==false){
+            progressDialog.dismiss();
+        }
     }
 }

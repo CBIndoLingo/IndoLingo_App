@@ -9,27 +9,27 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Add Your Email Adress.."
+        android:hint="Enter Your Email Adress..."
         android:paddingLeft="10dp"
         android:id="@+id/forgetemail"
         />
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="end"
         android:orientation="horizontal">
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Cancel"
             android:id="@+id/forgotcancel"
-            android:layout_marginRight="10dp"
+            android:layout_marginStart="60dp"
             android:background="@drawable/button_task_continue"
             />
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Done"
+            android:text="Send"
+            android:layout_marginStart="70dp"
             android:id="@+id/forgotok"
             android:background="@drawable/button_task_continue"
 
