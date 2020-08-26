@@ -6,7 +6,8 @@
     <item
         android:id="@+id/tab_alarm"
         android:icon="@drawable/alarm"
-        android:title="@string/alarm" />
+        android:title="@string/alarm"
+        />
     <item
         android:id="@+id/tab_bread"
         android:icon="@drawable/ic_free_breakfast_black_24dp"
