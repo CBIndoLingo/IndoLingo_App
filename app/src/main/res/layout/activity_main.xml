@@ -20,5 +20,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:abb_tabs="@menu/tabs"
+        android:background="@color/blue_background"
+        app:abb_indicatorAppearance="round"
+        app:abb_indicatorHeight="4dp"
+        app:abb_indicatorMargin="16dp"
+        app:abb_selectedIndex="0"
+        app:abb_selectedTabType="icon"
+        app:abb_indicatorColor="@color/blue_background"
+
         app:layout_constraintBottom_toBottomOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
