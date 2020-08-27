@@ -21,6 +21,7 @@
         android:layout_height="wrap_content"
         app:abb_tabs="@menu/tabs"
         app:abb_indicatorAppearance="round"
+        app:abb_indicatorLocation="top"
         app:abb_indicatorHeight="6dp"
         app:abb_indicatorMargin="16dp"
         app:abb_selectedIndex="0"

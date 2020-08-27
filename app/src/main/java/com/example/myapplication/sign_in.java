@@ -69,10 +69,12 @@ public class sign_in extends AppCompatActivity {
 
                 if (TextUtils.isEmpty(Email)) {
                     Toast.makeText(sign_in.this, "Enter email", Toast.LENGTH_SHORT).show();
+                    progressDialog.dismiss();
                     return;
                 }
                 if (TextUtils.isEmpty(Password)) {
                     Toast.makeText(sign_in.this, "Enter password", Toast.LENGTH_SHORT).show();
+                    progressDialog.dismiss();
                     return;
                 }
                 firebaseAuth.signInWithEmailAndPassword(Email, Password)
