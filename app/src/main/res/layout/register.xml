@@ -74,7 +74,9 @@
         android:layout_marginTop="24dp"
         android:background="@drawable/sign_in_button_bg"
         android:text="SIGN Up"
-        android:textColor="@color/white_text"
-        android:textSize="19sp" />
+        android:textColor="@color/blue_background"
+        android:textSize="19sp"
+        android:elevation="20dp"
+        android:shadowColor="@color/colorPrimary"/>
 
 </RelativeLayout>
