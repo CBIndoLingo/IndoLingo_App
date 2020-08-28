@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -30,6 +31,13 @@ public class courseSelectedAdapter extends RecyclerView.Adapter<courseSelectedAd
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         final selectedCourse_data selectedCourse_datalist= selectedCourse_data[position];
         holder.imageView.setImageResource(selectedCourse_datalist.getFlags());
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(context,selectedCourse_datalist.getFlags(),Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     @Override
