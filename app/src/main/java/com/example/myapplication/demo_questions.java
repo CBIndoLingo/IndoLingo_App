@@ -118,6 +118,9 @@ public class demo_questions extends AppCompatActivity {
                     }
                     else{
                         next.setVisibility(View.INVISIBLE);
+                        progressAnimator= ObjectAnimator.ofInt(progressBar,"progress",position*33,(position+1)*33);
+                        progressAnimator.setDuration(1000);
+                        progressAnimator.start();
                         final Dialog dialog= new Dialog(demo_questions.this);
                         dialog.setContentView(R.layout.dialog_demo_congratulations);
                         dialog.setCanceledOnTouchOutside(false);
