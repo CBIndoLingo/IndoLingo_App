@@ -1,5 +1,6 @@
 package com.example.myapplication;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -16,6 +17,7 @@ public class welcome extends AppCompatActivity {
 
     TextView login;
     Button getstarted;
+    ProgressDialog progressDialog;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,6 +49,7 @@ public class welcome extends AppCompatActivity {
                 demo.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+                        showProgressBar(true);
                         startActivity(new Intent(getApplicationContext(),demo_activity.class));
                         finish();
                     }
@@ -55,6 +58,7 @@ public class welcome extends AppCompatActivity {
                 register.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+                        showProgressBar(true);
                         startActivity(new Intent(getApplicationContext(),register.class));
                         finish();
                     }
@@ -66,9 +70,20 @@ public class welcome extends AppCompatActivity {
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                showProgressBar(true);
                 startActivity(new Intent(getApplicationContext(),sign_in.class));
                 finish();
             }
         });
+    }
+    private void showProgressBar(boolean b) {
+        progressDialog= new ProgressDialog(welcome.this);
+        if(b==true){
+            progressDialog.show();
+            progressDialog.setContentView(R.layout.progress_dialog);
+        }
+        if(b==false){
+            progressDialog.dismiss();
+        }
     }
 }
