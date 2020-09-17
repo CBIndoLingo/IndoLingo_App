@@ -11,7 +11,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".demo_questions"></activity>
+        <activity android:name=".payement"></activity>
+        <activity android:name=".demo_questions" />
         <activity android:name=".demo_activity" />
         <activity android:name=".sign_in" />
         <activity android:name=".MainActivity" />

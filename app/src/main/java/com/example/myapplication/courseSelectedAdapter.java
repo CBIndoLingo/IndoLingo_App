@@ -1,6 +1,7 @@
 package com.example.myapplication;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -28,15 +29,20 @@ public class courseSelectedAdapter extends RecyclerView.Adapter<courseSelectedAd
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ViewHolder holder, final int position) {
         final selectedCourse_data selectedCourse_datalist= selectedCourse_data[position];
         holder.imageView.setImageResource(selectedCourse_datalist.getFlags());
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(context,selectedCourse_datalist.getFlags(),Toast.LENGTH_SHORT).show();
+                if(position==(selectedCourse_data.length-1)){
+                }
+                else{
+
+                }
             }
+
         });
     }
 
